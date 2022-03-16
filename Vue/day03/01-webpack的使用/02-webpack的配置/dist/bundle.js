@@ -1,0 +1,1 @@
+(()=>{var o={359:o=>{o.exports={add:function(o,r){return o+r},mul:function(o,r){return o*r}}}},r={};function t(n){var e=r[n];if(void 0!==e)return e.exports;var s=r[n]={exports:{}};return o[n](s,s.exports,t),s.exports}(()=>{"use strict";const{add:o,mul:r}=t(359);console.log(o(20,30)),console.log(r(20,30)),console.log("小花")})()})();
