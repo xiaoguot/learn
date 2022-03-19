@@ -9,9 +9,11 @@
 
 <!--     <button @click="homeClick" active-class="active">首页</button>
     <button @click="aboutClick">关于</button> -->
+
     <router-link to="/home">首页</router-link>
     <router-link to="/about">关于</router-link>
     <router-link v-bind:to="'/user/' + userId">用户</router-link>
+    <router-link :to="{path: '/profile', query: {name: 'gt',age: 18,height:1.88}}">档案</router-link>
     <router-view></router-view>
     <h2>我是APP中一些底部版权信息</h2>
   </div>
