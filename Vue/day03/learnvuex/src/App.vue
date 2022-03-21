@@ -1,5 +1,16 @@
 <template>
   <div id="app">
+    <h2>----------App内容：modules里面的内容--------------</h2>
+    <!-- 模块 a 添加到了 state 中，所以需要先拿到a 在引用name -->
+    <h2>{{$store.state.a.name}}</h2>
+    <button @click="updateName">修改名字</button>
+    <!-- 也是可以直接调用 -->
+    <h2>{{$store.getters.fullname}}</h2>
+    <h2>{{$store.getters.fullname2}}</h2>
+    <h2>{{$store.getters.fullname3}}</h2>
+    <button @click="asyncUpdateName">异步修改名字</button>
+
+
     <h2>---------------App内容：info对象的内容是否是响应式的------------------</h2>
     <h2>{{$store.state.info}}</h2>
     <button @click="updateInfo">更改信息</button>
@@ -69,6 +80,12 @@ export default {
         console.log('里面完成了提交');
         console.log(res);
       });
+    },
+    updateName() {
+      this.$store.commit('updateName')
+    },
+    asyncUpdateName() {
+      this.$store.dispatch('aUpateName')
     }
   }
 }
