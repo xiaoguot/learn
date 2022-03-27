@@ -1,6 +1,7 @@
-const {add,mul} = require('./mathUtils.js')
-import {name} from "./inf.js";
+import { sum } from "./js/math";
+const { priceFormat } = require("./js/format");
 
-console.log(add(20,30));
-console.log(mul(20,30));
-console.log(name);
+import "./js/element";
+
+console.log(sum(20, 30));
+console.log(priceFormat());
