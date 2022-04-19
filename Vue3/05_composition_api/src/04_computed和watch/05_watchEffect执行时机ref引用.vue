@@ -12,7 +12,7 @@
       const title = ref(null);
 
       watchEffect(() => {
-        console.log(title.value);
+        console.log(title.value.innerText);
       }, {
         flush: "post"
       })

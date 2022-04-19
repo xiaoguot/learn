@@ -1,5 +1,7 @@
 import { createApp } from 'vue'
 import { globalRegister } from './global'
+import 'normalize.css'
+import './assets/css/index.css'
 
 import App from './App.vue'
 
@@ -7,6 +9,7 @@ import App from './App.vue'
 import hyRequest from './service'
 import router from './router'
 import store from './store'
+import { setupStore } from './store'
 
 const app = createApp(App)
 
@@ -14,11 +17,12 @@ const app = createApp(App)
 app.use(globalRegister)
 app.use(router)
 app.use(store)
+setupStore()
 
 app.mount('#app')
 
-console.log(process.env.VUE_APP_BASE_URL)
-console.log(process.env.VUE_APP_BASE_NAME)
+//console.log(process.env.VUE_APP_BASE_URL)
+//console.log(process.env.VUE_APP_TIME_OUT)
 
 // hyRequest.request({
 //   url: '/home/multidata',
@@ -35,7 +39,7 @@ console.log(process.env.VUE_APP_BASE_NAME)
 //     }
 //   }
 // })
-
+/*
 interface DataType {
   data: any
   returnCode: string
@@ -51,4 +55,4 @@ hyRequest
     console.log(res.data)
     console.log(res.returnCode)
     console.log(res.success)
-  })
+  }) */
