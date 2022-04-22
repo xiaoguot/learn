@@ -5,6 +5,7 @@ module.exports = {
   outputDir: './build', // 包名
   publicPath: './', // 注意 这里使用 /  如果不行的话  就 ./
   lintOnSave: false,
+  assetsDir: 'static',
   devServer: {
     proxy: {
       '^/api': {

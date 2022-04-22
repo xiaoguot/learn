@@ -1,7 +1,7 @@
 import hyRequest from '../index'
 
-import { ResultType } from '../types'
-import { IAccount, ILoginResult, IDataType } from './type'
+import { IDataType } from '../types'
+import { IAccount, ILoginResult } from './type'
 
 enum LoginAPI {
   AccountLogin = '/login',
@@ -10,7 +10,7 @@ enum LoginAPI {
 }
 
 export function accountLoginRequest(account: IAccount) {
-  return hyRequest.post<ResultType<ILoginResult>>({
+  return hyRequest.post<IDataType<ILoginResult>>({
     url: LoginAPI.AccountLogin,
     data: {
       ...account,
@@ -20,14 +20,14 @@ export function accountLoginRequest(account: IAccount) {
 }
 
 export function requestUserInfoById(id: number) {
-  return hyRequest.get<ResultType>({
+  return hyRequest.get<IDataType>({
     url: LoginAPI.LoginUserInfo + id,
     showLoading: false
   })
 }
 
 export function requestUserMenusByRoleId(id: number) {
-  return hyRequest.get<ResultType>({
+  return hyRequest.get<IDataType>({
     url: LoginAPI.UserMenus + id + '/menu',
     showLoading: false
   })

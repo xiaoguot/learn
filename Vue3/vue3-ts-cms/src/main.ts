@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import { globalRegister } from './global'
+import { registerElementIcon } from '@/plugins'
 import 'normalize.css'
 import './assets/css/index.css'
 
@@ -15,11 +16,15 @@ const app = createApp(App)
 
 // 注册element-plus/其他
 app.use(globalRegister)
-app.use(router)
 app.use(store)
+
 setupStore()
+app.use(router)
 
 app.mount('#app')
+
+//最新使用icons的方法
+registerElementIcon(app)
 
 //console.log(process.env.VUE_APP_BASE_URL)
 //console.log(process.env.VUE_APP_TIME_OUT)

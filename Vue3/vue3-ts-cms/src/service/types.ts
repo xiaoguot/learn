@@ -1,4 +1,4 @@
-export interface ResultType<T = any> {
+export interface IDataType<T = any> {
   code: number
   data: T
 }
