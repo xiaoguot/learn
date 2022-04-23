@@ -3,7 +3,7 @@
     <el-breadcrumb separator="/">
       <template v-for="item in breadcrumbs" :key="item.name">
         <el-breadcrumb-item :to="{ path: item.path }">
-          {{item.name}}
+          {{ item.name }}
         </el-breadcrumb-item>
       </template>
     </el-breadcrumb>
@@ -27,5 +27,4 @@ export default defineComponent({
 })
 </script>
 
-<style scoped lang="less">
-</style>
+<style scoped lang="less"></style>

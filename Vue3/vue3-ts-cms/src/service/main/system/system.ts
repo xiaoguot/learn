@@ -1,6 +1,6 @@
-import hyRequest from '../../index';
+import hyRequest from '../../index'
 
-import { IDataType } from '../../types';
+import { IDataType } from '../../types'
 
 export function getPageListData(url: string, queryInfo: any) {
   return hyRequest.post<IDataType>({
