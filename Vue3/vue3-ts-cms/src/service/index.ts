@@ -30,6 +30,7 @@ const hyRequest = new HYRequest({
     }
   }
 })
-//console.log(process.env.VUE_APP_BASE_URL)
+
+//const hyRequest2 = new HYRequest({...})
 
 export default hyRequest

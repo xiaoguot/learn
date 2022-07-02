@@ -93,7 +93,7 @@ export default defineComponent({
     const isDelete = usePermission(props.pageName, 'delete')
     const isQuery = usePermission(props.pageName, 'query')
 
-    // 1.双向绑定pageInfo
+    // 1.双向绑定pageInfo  监听页面的变化
     const pageInfo = ref({ currentPage: 1, pageSize: 10 })
     watch(pageInfo, () => getPageData())
 
@@ -109,10 +109,10 @@ export default defineComponent({
         }
       })
     }
-
+    //调用之后store里的数据就会更新
     getPageData()
 
-    // 3.从vuex中获取数据
+    // 3.从vuex中获取最新的数据
     const dataList = computed(() =>
       store.getters[`system/pageListData`](props.pageName)
     )
